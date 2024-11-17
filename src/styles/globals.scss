@@ -1,0 +1,41 @@
+@forward 'variables';
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 1rem;
+    box-sizing: border-box;
+
+    // Mobile first (320px+)
+    max-width: 100%;
+
+    // Small tablets (640px+)
+    @media (min-width: 40em) {
+        max-width: 640px;
+        padding-inline: 1.5rem;
+    }
+
+    // Tablets (768px+)
+    @media (min-width: 48em) {
+        max-width: 768px;
+        padding-inline: 2rem;
+    }
+
+    // Laptops (1024px+)
+    @media (min-width: 64em) {
+        max-width: 1024px;
+        padding-inline: 2.5rem;
+    }
+
+    // Desktops (1280px+)
+    @media (min-width: 80em) {
+        max-width: 1280px;
+        padding-inline: 3rem;
+    }
+
+    // Wide screens (1536px+)
+    @media (min-width: 96em) {
+        max-width: 1536px;
+        padding-inline: 4rem;
+    }
+}
