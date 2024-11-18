@@ -56,7 +56,7 @@ export const Navbar = () => {
               {menuItems.map((item, index) => (
                 <NavigationMenuItem key={index}>
                   <NavigationMenuLink asChild>
-                    <Link to={item.link} className="flex mx-4 text-sm">
+                    <Link to={item.link} className="flex mx-4 text-sm items-center">
                       <item.icon className="mr-2" />
                       {t(item.label)}
                     </Link>
