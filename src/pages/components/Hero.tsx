@@ -94,7 +94,7 @@ export const Hero: FC = () => {
       <ContentBox>
         <div className="flex flex-col sm:flex-row gap-6 p-6">
           <Avatar className="rounded-full shadow-md h-32 w-32 object-cover object-center ring-4 ring-blue-500 dark:ring-blue-400" style={{ width: 128, height: 128 }}>
-            <AvatarImage src="https://www.medevs.xyz/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FAhmed.826f0c71.jpeg&w=3840&q=75" />
+            <AvatarImage src="../../../public/avatar.jpg" />
             <AvatarFallback>KLong-Dev</AvatarFallback>
           </Avatar>
           <div className="flex-1">
