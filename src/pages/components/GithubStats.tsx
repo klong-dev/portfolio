@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
 import sample from "@/data/sampleGithub.json";
 import user from "@/data/userGithub.json";
+import { useTranslation } from "react-i18next";
 
 interface Repository {
   language: string | null;
@@ -17,6 +16,7 @@ interface LanguageStats {
 export default function GithubStats() {
   const [repos, setRepos] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     async function fetchRepos() {
@@ -88,7 +88,7 @@ export default function GithubStats() {
       </div>
 
       <div>
-        <h2 className="text-xl font-semibold mb-4">Top Languages</h2>
+        <h2 className="text-xl font-semibold mb-4">{t("top-language")}</h2>
         {!loading && (
           <div className="h-[200px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -107,14 +107,16 @@ export default function GithubStats() {
         )}
       </div>
 
-      <div className="text-sm text-gray-600 dark:text-gray-400">Member since: {new Date(user.created_at).toLocaleDateString()}</div>
+      <div className="text-sm text-gray-600 dark:text-gray-400">
+        {t("member-since")}: {new Date(user.created_at).toLocaleDateString()}
+      </div>
 
       <div className="flex mt-6 justify-center">
         <a href="https://github.com/klong-dev" target="_blank" rel="noopener noreferrer" className="h-10 inline-block bg-gray-800 dark:bg-gray-600 text-white font-medium py-2 px-4 rounded hover:bg-gray-700 dark:hover:bg-gray-500 transition-colors mr-2 mb-2">
-          View Profile
+          {t("view-profile")}
         </a>
         <a href="https://github.com/klong-dev?tab=repositories" target="_blank" rel="noopener noreferrer" className="h-10 inline-block bg-blue-500 text-white font-medium py-2 px-4 rounded hover:bg-blue-600 transition-colors">
-          View Repositories
+          {t("view-repos")}
         </a>
       </div>
     </div>

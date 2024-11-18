@@ -132,7 +132,7 @@ export const Hero: FC = () => {
         <div>
           <ContentBox>
             <div className="p-6">
-              <h2 className="text-2xl font-bold">Technologies</h2>
+              <h2 className="text-2xl font-bold">{t("technologies")}</h2>
               <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
                 {technologies.map((technology) => (
                   <li className="flex flex-col items-center justify-center p-4 rounded-lg bg-gray-100 dark:bg-gray-700 transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-600 hover:scale-105 transform">

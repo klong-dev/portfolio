@@ -1,4 +1,5 @@
 import { CalendarIcon, BriefcaseIcon, GraduationCapIcon as AcademicCapIcon, UsersIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 // Types
 interface TimelineItemData {
   title: string;
@@ -53,12 +54,13 @@ const leadership: TimelineItemData[] = [
 ];
 
 export default function Timeline() {
+  const { t } = useTranslation();
   return (
     <div className="mt-6 mx-auto p-6 bg-gray-100 dark:bg-gray-900 rounded-lg shadow">
       <h1 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">Timeline</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Experience</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{t("experience")}</h2>
           <div className="space-y-8">
             {experiences.map((item, index) => (
               <TimelineItem key={index} {...item} />
@@ -66,13 +68,13 @@ export default function Timeline() {
           </div>
         </div>
         <div>
-          <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Education</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{t("education")}</h2>
           <div className="space-y-8">
             {education.map((item, index) => (
               <TimelineItem key={index} {...item} />
             ))}
           </div>
-          <h2 className="text-xl font-bold my-4 text-gray-900 dark:text-white">Project Leadership</h2>
+          <h2 className="text-xl font-bold my-4 text-gray-900 dark:text-white">{t("project-leadership")}</h2>
           <div className="space-y-8">
             {leadership.map((item, index) => (
               <TimelineItem key={index} {...item} />

@@ -1,5 +1,6 @@
 import { ContentBox } from "@/components/ContentBox";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
 const repositories = [
   {
@@ -17,9 +18,10 @@ const repositories = [
 ];
 
 export const StarRepository = () => {
+  const { t } = useTranslation();
   return (
     <ContentBox>
-      <h1 className="pt-6 pl-6 text-2xl font-bold text-gray-800 dark:text-white">Pinned Repositories</h1>
+      <h1 className="pt-6 pl-6 text-2xl font-bold text-gray-800 dark:text-white">{t("pinned-repo")}</h1>
       <div className="grid gap-4 p-6 pt-3 pb-0 sm:grid-cols-2">
         {repositories.map((repo) => (
           <div className="group relative overflow-hidden rounded-xl p-1 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl flex-grow">

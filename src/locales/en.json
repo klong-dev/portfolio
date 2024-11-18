@@ -8,5 +8,15 @@
     "projects": "Projects",
     "blog": "Blog",
     "bio-1": "Hey there, I'm Hoang Kim Long, a student and aspiring Software Developer focusing on backend development with NestJS. I'm passionate about learning web technologies and the JavaScript ecosystem, with a particular interest in building robust server-side applications. Currently on my learning journey, I strive to grow my skills in developing scalable and efficient backend solutions.",
-    "bio-2": "I specialize in backend development with NestJS and am continuously expanding my knowledge of modern web technologies."
+    "bio-2": "I specialize in backend development with NestJS and am continuously expanding my knowledge of modern web technologies.",
+    "top-language": "Top Languages",
+    "technologies": "Technologies",
+    "pinned-repo": "Pinned Repositories",
+    "timeline": "Timeline",
+    "education": "Education",
+    "experience": "Experience",
+    "project-leadership": "Project Leadership",
+    "member-since": "Member since",
+    "view-profile": "View Profile",
+    "view-repos": "View Repositories"
 }

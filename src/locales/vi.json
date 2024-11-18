@@ -8,5 +8,15 @@
     "projects": "Dự án",
     "blog": "Blog",
     "bio-1": "Xin chào, tôi là Hoàng Kim Long, một sinh viên và là một lập trình viên phần mềm đang phát triển, tập trung vào lập trình phía máy chủ (backend) với NestJS. Tôi đam mê học hỏi về các công nghệ web và hệ sinh thái JavaScript, đặc biệt quan tâm đến việc xây dựng các ứng dụng phía máy chủ mạnh mẽ. Hiện tại, trong hành trình học tập của mình, tôi nỗ lực phát triển kỹ năng trong việc tạo ra các giải pháp backend có khả năng mở rộng và hiệu quả.",
-    "bio-2": "Tôi chuyên về phát triển backend với NestJS và liên tục mở rộng kiến thức về các công nghệ web hiện đại."
+    "bio-2": "Tôi chuyên về phát triển backend với NestJS và liên tục mở rộng kiến thức về các công nghệ web hiện đại.",
+    "top-language": "Top Ngôn ngữ",
+    "technologies": "Công nghệ",
+    "pinned-repo": "Repositories Nổi bật",
+    "timeline": "Dòng thời gian",
+    "education": "Học vấn",
+    "experience": "Kinh nghiệm",
+    "project-leadership": "Leadership dự án",
+    "member-since": "Thành viên từ",
+    "view-profile": "Xem hồ sơ",
+    "view-repos": "Xem các repository"
 }
