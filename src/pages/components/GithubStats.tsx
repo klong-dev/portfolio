@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
-import sample from "@/data/sampleGithub.json";
-import user from "@/data/userGithub.json";
 import { useTranslation } from "react-i18next";
 
 interface Repository {
   language: string | null;
+  stargazers_count: number;
 }
 
+interface User {
+  followers: number;
+  following: number;
+  created_at: string;
+}
 interface LanguageStats {
   name: string;
   value: number;
@@ -15,13 +19,23 @@ interface LanguageStats {
 
 export default function GithubStats() {
   const [repos, setRepos] = useState<Repository[]>([]);
+  const [user, setUser] = useState<User>({
+    followers: 0,
+    following: 0,
+    created_at: "",
+  });
   const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
 
   useEffect(() => {
     async function fetchRepos() {
       try {
-        const data = sample;
+        let data = JSON.parse(localStorage.getItem("repos") || "") || [];
+        const response = await fetch("https://api.github.com/users/klong-dev/repos");
+        if (response.ok) {
+          data = await response.json();
+          localStorage.setItem("repos", JSON.stringify(data));
+        }
         // Ensure data is array before setting
         if (Array.isArray(data)) {
           setRepos(data);
@@ -37,6 +51,31 @@ export default function GithubStats() {
       }
     }
 
+    async function fetchUser() {
+      try {
+        const response = await fetch("https://api.github.com/users/klong-dev");
+        if (response.ok) {
+          const data = await response.json();
+          // Ensure data is object before setting
+          if (typeof data === "object") {
+            user.followers = data.followers;
+            user.following = data.following;
+            user.created_at = data.created_at;
+            setUser(user);
+            localStorage.setItem("user", JSON.stringify(user));
+          } else {
+            if (localStorage.getItem("user")) {
+              setUser(JSON.parse(localStorage.getItem("user") || ""));
+            }
+            console.error("API response is not an object:", data);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching user:", error);
+      }
+    }
+
+    fetchUser();
     fetchRepos();
   }, []);
 
@@ -74,7 +113,7 @@ export default function GithubStats() {
           <div className="text-xs text-gray-600 dark:text-gray-400">Repositories</div>
         </div>
         <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-md shadow text-center text-wrap">
-          <span className="block text-2xl font-bold text-gray-900 dark:text-gray-100">{sample.reduce((totalStars, repo) => totalStars + (repo.stargazers_count || 0), 0)}</span>
+          <span className="block text-2xl font-bold text-gray-900 dark:text-gray-100">{repos.reduce((totalStars, repo) => totalStars + (repo.stargazers_count || 0), 0)}</span>
           <div className="text-xs text-gray-600 dark:text-gray-400">Stars</div>
         </div>
         <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-md shadow text-center text-wrap">
