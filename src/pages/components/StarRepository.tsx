@@ -6,13 +6,13 @@ const repositories = [
   {
     name: "Portfolio",
     description: "A Portfolio Website with an AI chatbot that can answer any question about you.",
-    url: "",
+    html_url: "",
     tech: ["React", "Tailwind CSS", "TypeScript", "Firebase"],
   },
   {
     name: "RemindMe",
     description: "A simple reminder app that can help you remember important events.",
-    url: "",
+    html_url: "",
     tech: ["React", "Tailwind CSS", "TypeScript", "Firebase"],
   },
 ];
@@ -36,7 +36,7 @@ export const StarRepository = () => {
                   </span>
                 ))}
               </div>
-              <a href={repo.url} className="flex items-center mt-4 text-blue-500 dark:text-blue-400 hover:underline">
+              <a href={repo.html_url} className="flex items-center mt-4 text-blue-500 dark:text-blue-400 hover:underline">
                 <Icon icon="meteor-icons:github" className="mr-1" />
                 <span className="text-sm">Github</span>
               </a>
