@@ -3,19 +3,18 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Home, FolderGit, BookOpen, Code2, FileText, Sun, Moon } from "lucide-react";
 import { Button } from "./ui/button";
-import { useState } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
 
 export const Navbar = () => {
-  const { isDark, toggle } = useTheme();
+  const { isDark, toggle, language, toggleLanguage } = useTheme();
   const { t } = useTranslation();
   const toggleDarkMode = () => {
     toggle();
   };
-  const [language, setLanguage] = useState("vi");
-  const toggleLanguage = () => {
-    setLanguage(language === "vi" ? "en" : "vi");
+  const lang = () => {
+    toggleLanguage();
   };
+
   const menuItems = [
     {
       label: t("home"),
@@ -44,12 +43,12 @@ export const Navbar = () => {
     },
   ];
   return (
-    <div className="flex justify-center align-items-center py-5">
+    <div className="flex justify-center align-items-center py-2 sticky top-0 z-50 backdrop-blur-md">
       <div className="container">
         <div className="flex align-items-center justify-between">
           <div className="flex align-items-center">
-            <Link to="/" className="text-2xl font-bold" style={{ lineHeight: 2 }}>
-              Portfolio
+            <Link to="/" className="text-xl font-bold" style={{ lineHeight: 2 }}>
+              KLong.dev
             </Link>
           </div>
           <NavigationMenu>
@@ -57,7 +56,7 @@ export const Navbar = () => {
               {menuItems.map((item, index) => (
                 <NavigationMenuItem key={index}>
                   <NavigationMenuLink asChild>
-                    <Link to={item.link} className="flex mx-4">
+                    <Link to={item.link} className="flex mx-4 text-sm">
                       <item.icon className="mr-2" />
                       {t(item.label)}
                     </Link>
@@ -66,11 +65,13 @@ export const Navbar = () => {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <div>
-            <Button className="mr-1" onClick={toggleDarkMode}>
+          <div className="flex items-center">
+            <Button variant="ghost" onClick={lang}>
+              <span className="uppercase">{language}</span>
+            </Button>
+            <Button variant="ghost" className="mr-1" onClick={toggleDarkMode}>
               {isDark ? <Sun /> : <Moon />}
             </Button>
-            <Button onClick={toggleLanguage}>VI</Button>
           </div>
         </div>
       </div>
