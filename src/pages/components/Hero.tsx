@@ -109,7 +109,7 @@ export const Hero: FC = () => {
               </li>
               <li>
                 <a href="https://github.com/klong-dev" title="GitHub Profile">
-                  <Icon icon="logos:github-icon" width={24} height={24} />
+                  <Icon icon="meteor-icons:github" width={24} height={24} />
                 </a>
               </li>
               <li>

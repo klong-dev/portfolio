@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import { Home, FolderGit, BookOpen, Code2, FileText, Sun, Moon } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { useTheme } from "@/contexts/ThemeContext";
+
 export const Navbar = () => {
+  const { isDark, toggle } = useTheme();
   const { t } = useTranslation();
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    toggle();
   };
   const [language, setLanguage] = useState("vi");
   const toggleLanguage = () => {
@@ -66,7 +68,7 @@ export const Navbar = () => {
           </NavigationMenu>
           <div>
             <Button className="mr-1" onClick={toggleDarkMode}>
-              {isDarkMode ? <Sun /> : <Moon />}
+              {isDark ? <Sun /> : <Moon />}
             </Button>
             <Button onClick={toggleLanguage}>VI</Button>
           </div>
