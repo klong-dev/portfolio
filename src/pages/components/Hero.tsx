@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import { ContentBox } from "@/components/ContentBox";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useTranslation } from "react-i18next";
+import GithubStats from "./GithubStats";
 
 const technologies = [
   {
@@ -123,8 +124,10 @@ export const Hero: FC = () => {
       </ContentBox>
 
       <div className="grid grid-cols-2 py-6 gap-6">
-        <div>
-          <ContentBox>a</ContentBox>
+        <div className="h-full">
+          <ContentBox>
+            <GithubStats />
+          </ContentBox>
         </div>
         <div>
           <ContentBox>
