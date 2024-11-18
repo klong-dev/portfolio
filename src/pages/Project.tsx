@@ -12,7 +12,6 @@ interface Repository {
 }
 
 export const Project = () => {
-  const [loading, setLoading] = React.useState(true);
   const [repositories, setRepositories] = React.useState<Repository[]>([]);
   React.useEffect(() => {
     async function fetchRepos() {
@@ -34,8 +33,6 @@ export const Project = () => {
         console.error("Error fetching repos:", error);
         setRepositories([]);
       } finally {
-        console.log(repositories);
-        setLoading(false);
       }
     }
     fetchRepos();
