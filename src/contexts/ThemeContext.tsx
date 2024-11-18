@@ -14,7 +14,10 @@ const ThemeContext = React.createContext({
 
 export const ThemeProvider: React.FC<ThemeProviderType> = ({ children }) => {
   const [isDark, setIsDark] = React.useState(true);
-  const [language, setLanguage] = React.useState("en");
+  const [language, setLanguage] = React.useState(() => {
+    const localLanguage = localStorage.getItem("lang");
+    return localLanguage ? localLanguage : "en";
+  });
   const { i18n } = useTranslation();
 
   React.useEffect(() => {
