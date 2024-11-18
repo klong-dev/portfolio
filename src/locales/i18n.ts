@@ -10,17 +10,17 @@ i18n
     .use(LanguageDetector) // Tự động phát hiện ngôn ngữ
     .use(initReactI18next) // Kết nối với React
     .init({
-        fallbackLng: 'vn', // Ngôn ngữ mặc định
+        fallbackLng: 'en', // Ngôn ngữ mặc định
         debug: true, // Bật debug trong development
         interpolation: {
             escapeValue: false, // React đã xử lý việc escape
         },
         resources: {
             en: {
-                translation: vi,
+                translation: en,
             },
             vn: {
-                translation: en,
+                translation: vi,
             },
         },
     });
