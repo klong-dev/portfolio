@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const repositories = [
   {
     name: "Portfolio",
-    description: "A Portfolio Website with an AI chatbot that can answer any question about you.",
+    description: "Personal portfolio showcasing projects, skills, and experiences. Built with modern web technologies.",
     html_url: "https://github.com/klong-dev/portfolio",
     tech: ["React", "Tailwind CSS", "TypeScript", "shadcn/ui"],
   },
