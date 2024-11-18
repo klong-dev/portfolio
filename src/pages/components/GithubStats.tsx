@@ -30,7 +30,7 @@ export default function GithubStats() {
   useEffect(() => {
     async function fetchRepos() {
       try {
-        let data = JSON.parse(localStorage.getItem("repos") || "") || [];
+        let data = localStorage.getItem("repos") ? JSON.parse(localStorage.getItem("repos") || "") : [];
         const response = await fetch("https://api.github.com/users/klong-dev/repos");
         if (response.ok) {
           data = await response.json();

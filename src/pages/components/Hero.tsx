@@ -4,6 +4,7 @@ import { ContentBox } from "@/components/ContentBox";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useTranslation } from "react-i18next";
 import GithubStats from "./GithubStats";
+import avatar from "@/assets/avatar.jpg";
 
 const technologies = [
   {
@@ -94,7 +95,7 @@ export const Hero: FC = () => {
       <ContentBox>
         <div className="flex flex-col sm:flex-row gap-6 p-6">
           <Avatar className="rounded-full shadow-md h-32 w-32 object-cover object-center ring-4 ring-blue-500 dark:ring-blue-400" style={{ width: 128, height: 128 }}>
-            <AvatarImage src="../../../public/avatar.jpg" />
+            <AvatarImage src={avatar} />
             <AvatarFallback>KLong-Dev</AvatarFallback>
           </Avatar>
           <div className="flex-1">
