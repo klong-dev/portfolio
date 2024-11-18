@@ -6,14 +6,14 @@ const repositories = [
   {
     name: "Portfolio",
     description: "A Portfolio Website with an AI chatbot that can answer any question about you.",
-    html_url: "",
-    tech: ["React", "Tailwind CSS", "TypeScript", "Firebase"],
+    html_url: "https://github.com/klong-dev/portfolio",
+    tech: ["React", "Tailwind CSS", "TypeScript", "shadcn/ui"],
   },
   {
-    name: "RemindMe",
-    description: "A simple reminder app that can help you remember important events.",
-    html_url: "",
-    tech: ["React", "Tailwind CSS", "TypeScript", "Firebase"],
+    name: "FPT Mentor (SWP391)",
+    description: "An online mentoring platform for FPT students.",
+    html_url: "https://github.com/klong-dev/swp_group3_be",
+    tech: ["Express.JS", "Sequelize", "Mysql", "Cloud VPS"],
   },
 ];
 

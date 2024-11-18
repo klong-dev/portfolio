@@ -1,50 +1,89 @@
-# React + TypeScript + Vite
+## ✨ Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- 🎯 Modern UI/UX with Tailwind CSS and shadcn/ui
+- 🌙 Light/Dark mode toggle
+- 📱 Fully Responsive design
+- 🌐 Multi-language support
+- 📊 Dynamic GitHub statistics
+- ⚡ Fast page loads with React
+- 🎨 Animated UI elements
+- 📈 Real-time GitHub activity
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- i18next
+- React Query
+- GitHub API
+- Recharts
 
-## Expanding the ESLint configuration
+## 🛠 Installation & Set Up
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/klong-dev/portfolio.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+npm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+3. Set up environment variables
+
+```bash
+cp .env.example .env
+```
+
+4. Start the development server
+
+```bash
+npm run dev
+```
+
+## 🎨 Building for Production
+
+1. Generate a production build
+
+```bash
+npm run build
+```
+
+2. Preview production build
+
+```bash
+npm run preview
+```
+
+## 🔧 Configuration
+
+1. Update `src/config/site.ts` with your information
+2. Modify `src/data/repositories.ts` for featured projects
+3. Edit language files in `src/locales/` for i18n
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## 👤 Author
+
+- GitHub: [@klong-dev](https://github.com/klong-dev)
+
+## 🙏 Acknowledgments
+
+- [shadcn/ui](https://ui.shadcn.com/) for the UI components
+- [Tailwind CSS](https://tailwindcss.com/) for the styling
+- [Iconify](https://iconify.design/) for the icons
+
+```
+
 ```
