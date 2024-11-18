@@ -83,7 +83,3 @@ Contributions, issues, and feature requests are welcome!
 - [shadcn/ui](https://ui.shadcn.com/) for the UI components
 - [Tailwind CSS](https://tailwindcss.com/) for the styling
 - [Iconify](https://iconify.design/) for the icons
-
-```
-
-```
