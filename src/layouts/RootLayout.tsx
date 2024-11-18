@@ -6,10 +6,9 @@ export const RootLayout = () => {
   return (
     <div>
       <Navbar />
-      <main>
+      <main className="pb-12">
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import Timeline from "./components/Timeline";
 
 export const Home = () => {
   return (
-    <div className="container">
+    <div className="container pt-6">
       <Hero />
       <StarRepository />
       <Timeline />
