@@ -9,6 +9,7 @@ export const RootLayout = () => {
       <main className="pb-12">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };
