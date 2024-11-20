@@ -124,7 +124,7 @@ export const Hero: FC = () => {
         </div>
       </ContentBox>
 
-      <div className="grid grid-cols-2 py-6 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-6 gap-4">
         <div className="h-full">
           <ContentBox>
             <GithubStats />
