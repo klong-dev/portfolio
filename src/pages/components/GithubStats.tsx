@@ -133,7 +133,7 @@ export default function GithubStats() {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart layout="vertical" data={calculateLanguageStats()} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <XAxis type="number" hide />
-                <YAxis className="text-sm text-gray-900 dark:text-gray-100" dataKey="name" type="category" axisLine={false} tickLine={false} width={80} />
+                <YAxis className="text-sm" dataKey="name" type="category" axisLine={false} tickLine={false} width={80} tick={{ fill: "#ffffff" }} tickFormatter={(name) => name} />
                 <Tooltip formatter={(value: number) => `${value.toFixed(2)}%`} contentStyle={{ background: "#2d3748", border: "none" }} cursor={{ fill: "rgba(255, 255, 255, 0.1)" }} />
                 <Bar dataKey="value" radius={[0, 4, 4, 0]}>
                   {calculateLanguageStats().map((entry, index) => (
@@ -146,7 +146,7 @@ export default function GithubStats() {
         )}
       </div>
 
-      <div className="text-sm text-gray-600 dark:text-gray-400">
+      <div className="text-sm text-gray-600 dark:text-gray-400 mt-3">
         {t("member-since")}: {new Date(user.created_at).toLocaleDateString()}
       </div>
 
