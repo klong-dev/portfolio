@@ -6,6 +6,7 @@ import { Contact } from "../pages/Contact";
 import { RootLayout } from "@/layouts/RootLayout";
 import { Project } from "@/pages/Project";
 import { Blog } from "@/pages/Blog";
+import { Resume } from "@/pages/Resume";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/resume",
+        element: <Resume />,
       },
       {
         path: "*",

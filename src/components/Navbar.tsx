@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Home, FolderGit, BookOpen, Code2, FileText, Sun, Moon, Menu } from "lucide-react";
+import { Home, FolderGit, FileText, Sun, Moon, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -32,20 +32,25 @@ export const Navbar = () => {
       icon: FolderGit,
     },
     {
-      label: t("blog"),
-      link: "/blog",
-      icon: BookOpen,
-    },
-    {
-      label: t("about"),
-      link: "/about",
+      label: t("resume"),
+      link: "/resume",
       icon: FileText,
     },
-    {
-      label: t("contact"),
-      link: "/contact",
-      icon: Code2,
-    },
+    // {
+    //   label: t("blog"),
+    //   link: "/blog",
+    //   icon: BookOpen,
+    // },
+    // {
+    //   label: t("about"),
+    //   link: "/about",
+    //   icon: FileText,
+    // },
+    // {
+    //   label: t("contact"),
+    //   link: "/contact",
+    //   icon: Code2,
+    // },
   ];
 
   const NavItems = ({ mobile = false }) => (
